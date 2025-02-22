@@ -67,3 +67,82 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+/* ================================================= */
+
+body {
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.forecast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.days-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: rgb(76, 76, 76);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.days-container div {
+  padding: 10px;
+  background-color: gray;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.days-container div:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.days-container div:nth-child(even) {
+  background-color: #fff;
+  color: #000;
+}
+
+.location-input {
+  border: none;
+  border-radius: 15px;
+  padding: 8px 20px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.location-input:focus {
+  outline: none;
+}
+
+.search-btn {
+  background-color: rgb(76, 76, 76);
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+  transform: scale(1.1);
+}
