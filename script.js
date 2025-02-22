@@ -18,7 +18,6 @@ async function getData(location) {
     const { address, days, description, currentConditions } = locationData;
 
     const properties = { address, days, description, currentConditions };
-    console.log(properties);
     return properties;
 
 
