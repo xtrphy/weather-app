@@ -18,6 +18,7 @@ async function getData(location) {
     const { address, days, description, currentConditions } = locationData;
 
     const properties = { address, days, description, currentConditions };
+    console.log(properties);
     return properties;
 
 
@@ -33,8 +34,6 @@ searchBtn.addEventListener('click', async () => {
   const properties = await getData(location);
   locationInput.value = '';
   locationInput.focus();
-
-  heading.textContent = `Forecast in ${properties.address}: `;
 
   const forecastDiv = document.querySelector('.forecast');
   forecastDiv.innerHTML = '';
@@ -54,8 +53,21 @@ searchBtn.addEventListener('click', async () => {
 
   forecastDiv.appendChild(daysContainer);
 
-  if (properties.currentConditions.icon === 'cloudy') {
-    heading.textContent = `Forecast in ${properties.address} ☁️`;
-  }
+  const icons = {
+    cloudy: '☁️',
+    'partly-cloudy-day': '⛅',
+    'partly-cloudy-night': '⛅',
+    snow: '❄️',
+    rain: '🌧️',
+    fog: '🌫️',
+    wind: '💨',
+    'clear-day': '☀️',
+    'clear-night': '☀️',
+    'thunder-rain': '⛈️',
+    'thunder-showers-day': '⛈️',
+    'thunder-showers-night': '⛈️'
+  };
 
+  const icon = properties.currentConditions.icon;
+  heading.textContent = `Forecast in ${properties.address} ${icons[icon] || ''}`;
 });
